@@ -1,0 +1,29 @@
+{
+  "name": "bot-template",
+  "version": "0.1.0",
+  "description": "A bot template.",
+  "main": "cmp/index.js",
+  "dependencies": {
+    "axios": "latest",
+    "eris": "latest",
+    "glob": "latest",
+    "typescript": "latest",
+    "winston": "latest",
+    "uuid": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/glob": "latest",
+    "@types/uuid": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest"
+  },
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js src/**",
+    "build": "tsc",
+    "start": "npm run build && node cmp/index.js"
+  },
+  "author": "Bisho",
+  "license": "ISC"
+}

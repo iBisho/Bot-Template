@@ -1,0 +1,10 @@
+import Command from '../structs/Command';
+
+export default new Command('commandName', async (client, ctx) => {
+
+	// Content.
+}, {
+	description: 'Description of the command.',
+	usage: 'Usage of the command.',
+	category: 'Category of the command.'
+});
