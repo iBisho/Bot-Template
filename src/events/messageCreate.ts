@@ -27,6 +27,24 @@ export default class MessageCreateEvent extends Event {
 		const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command)!);
 		if (!cmd) return;
 
+		if (!cmd.options.enabled && !client.constants.DEVELOPERS.includes(message.author.id)) {
+			const { code } = new MessageEmbed()
+				.setColor(client.constants.COLORS.VIOLET)
+				.setTitle('Command Disabled')
+				.setDescription('This command was disabled by the developer. If you believe this is an error, please contact the developer.')
+				.setTimestamp();
+			return await message.channel.createMessage({ embed: code });
+		}
+
+		if (cmd.options.development && !client.constants.DEVELOPERS.includes(message.author.id)) {
+			const { code } = new MessageEmbed()
+				.setColor(client.constants.COLORS.DARK_BLUE)
+				.setTitle('Developer Command')
+				.setDescription('This command is only useable by the developer. If you believe this is an error, please contact the developer.')
+				.setTimestamp();
+			return await message.channel.createMessage({ embed: code });
+		}
+
 		const ctx = {
 			args,
 			guild: message.channel.guild,

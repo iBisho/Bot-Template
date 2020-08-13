@@ -1,17 +1,7 @@
 import { join } from 'path';
 
 export const CHANNELS = {
-	ERRORS: '742190968006246492'
-};
-
-export const SERVERS = {
-	MURDER: '162.248.92.127:27030',
-	SCPSF: '74.91.119.154:27014',
-	SAXTONHALE: '74.91.113.65:27015',
-	MURDERTEST: '192.223.30.248:27015',
-	FREAKFORTRESS: '74.91.119.154:27016',
-	PROPHUNT: '74.91.113.50:27016',
-	ZOMBIEESCAPE: '74.91.124.167:27015'
+	ERRORS: 'CHANNEL ID'
 };
 
 export const COLORS = {
@@ -43,7 +33,9 @@ export const DISCORD = {
 	CODE_BLOCK: (str: string, lang = '') => ['```' + lang, str, '```'].join('\n')
 };
 
+export const DEVELOPERS = ['ID'];
+
 export const REGEX_NON_UTF = /[^A-Za-z 0-9 .,?""!@#$%^&*()-_=+;:<>/\\|}{[\]`~]*/gmi;
 export const ESCAPE_NON_UTF = (str: string) => str.replace(REGEX_NON_UTF, '');
 
-export const TOKEN = Buffer.from('4e7a49304e6a637a4d5459774d5463354e6a457a4f4441342e5876446d7a512e5a33386d4645616c69426950724347545864484e33487530676f67', 'hex').toString('utf8');
+export const TOKEN = Buffer.from('HEXADECIMAL TOKEN', 'hex').toString('utf8');
