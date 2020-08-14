@@ -17,8 +17,9 @@ module.exports = {
 		'ecmaVersion': 2017,
 		'sourceType': 'module',
 		'ecmaFeatures': {
-			'modules': true
-		}
+      'modules': true
+		},
+		'project': './tsconfig.json'
 	},
 	'plugins': [
 		'@typescript-eslint'
@@ -47,6 +48,26 @@ module.exports = {
 			'error',
 			'multi'
 		],
+		'require-await': [
+			'error'
+		],
+		'sort-imports': [
+			'error',
+			{
+				'memberSyntaxSortOrder': ['none', 'single', 'all', 'multiple'],
+				'ignoreDeclarationSort': true
+			}
+		],
+		'@typescript-eslint/adjacent-overload-signatures': [
+			'error'
+		],
+		'@typescript-eslint/ban-ts-ignore': [
+			'off'
+		],
+		'@typescript-eslint/consistent-type-definitions': [
+			'error',
+			'type'
+		],
 		'@typescript-eslint/no-explicit-any': [
 			'error',
 			{
@@ -55,6 +76,20 @@ module.exports = {
 		],
 		'no-trailing-spaces': [
 			'error'
+		],
+		'@typescript-eslint/explicit-member-accessibility': [
+			'error',
+			{
+				'accessibility': 'no-public'
+			}
+		],
+		'@typescript-eslint/member-delimiter-style': [
+			'error',
+			{
+				'multiline': {
+					'delimiter': 'semi'
+				}
+			}
 		],
 		'@typescript-eslint/indent': [
 			'error',
@@ -79,6 +114,16 @@ module.exports = {
 		],
 		'@typescript-eslint/explicit-function-return-type': [
 			'off'
+		],
+		'@typescript-eslint/naming-convention': [
+			'error',
+			{
+				'format': ['camelCase', 'PascalCase'],
+				'selector': 'default'
+			}
+		],
+		'@typescript-eslint/no-misused-promises': [
+			'error'
 		],
 		'@typescript-eslint/no-non-null-assertion': [
 			'off'

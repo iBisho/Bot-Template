@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import Command from './Command';
 import Console from './Console';
 import Event from './Event';
@@ -5,7 +6,7 @@ import * as Constants from '../Constants';
 import { sync } from 'glob';
 import { join } from 'path';
 import { Client, ClientOptions } from 'eris';
-import { FILE_DIRS } from '../Constants';
+import { FILEDIRS } from '../Constants';
 
 export default class Server extends Client {
 	console = Console;
@@ -43,7 +44,7 @@ export default class Server extends Client {
 			this.off(event.name, event.execute.bind(event, this));
 		});
 
-		this.loadDirectory(join(FILE_DIRS.ROOT(), 'events'));
+		this.loadDirectory(join(FILEDIRS.ROOT(), 'events'));
 		this.loadEvents();
 
 		return this;

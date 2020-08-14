@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2018",
     "module": "commonjs",
-    "lib": ["ES2017"],
+    "lib": ["ES2018"],
 		"sourceMap": true,
 		"outDir": "./cmp",
 		"rootDir": "./src",

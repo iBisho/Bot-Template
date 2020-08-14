@@ -6,7 +6,7 @@ export default class ErrorEvent extends Event {
 		super('error');
 	}
 
-	async execute(client: Server, err: Error, id: number) {
+	execute(client: Server, err: Error, id: number) {
 		client.console.error(`[Gateway] [${id}] ${err.name} ${err.message}.`);
 	}
 }

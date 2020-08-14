@@ -15,7 +15,7 @@ export default class MessageCreateEvent extends Event {
 		if (!message.member) return;
 
 		if (!message.content.startsWith(client.prefix)) return;
-		this.handleCommand(client, message);
+		await this.handleCommand(client, message);
 	}
 
 	async handleCommand(client: Server, message: Message) {
@@ -38,7 +38,7 @@ export default class MessageCreateEvent extends Event {
 
 		if (cmd.options.development && !client.constants.DEVELOPERS.includes(message.author.id)) {
 			const { code } = new MessageEmbed()
-				.setColor(client.constants.COLORS.DARK_BLUE)
+				.setColor(client.constants.COLORS.DARKBLUE)
 				.setTitle('Developer Command')
 				.setDescription('This command is only useable by the developer. If you believe this is an error, please contact the developer.')
 				.setTimestamp();
@@ -60,7 +60,7 @@ export default class MessageCreateEvent extends Event {
 					.setColor(client.constants.COLORS.RED)
 					.setAuthor(`${ctx.guild.name} - ${ctx.guild.id}`, ctx.guild.dynamicIconURL(undefined, 128))
 					.setTitle(`Command Error - ${cmd.name}`)
-					.setDescription(client.constants.DISCORD.CODE_BLOCK(inspect(e).slice(0, 2000), 'js'))
+					.setDescription(client.constants.DISCORD.CODEBLOCK(inspect(e).slice(0, 2000), 'js'))
 					.addField('Key', key)
 					.setFooter(`${message.author.username}#${message.author.discriminator} - ${message.author.id}`, message.author.dynamicAvatarURL(undefined, 128))
 					.setTimestamp(),

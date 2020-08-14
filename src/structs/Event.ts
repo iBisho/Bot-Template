@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Server from './Client';
 
 export default abstract class Event {
@@ -6,8 +8,7 @@ export default abstract class Event {
 		this.name = name;
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	async execute(_caller: Server, ..._args: unknown[]): Promise<unknown> {
+	execute(_caller: Server, ..._args: unknown[]): Promise<unknown> | unknown {
 		throw new Error('The event must be executable.');
 	}
 }

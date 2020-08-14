@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 const embedLimits = {
 	title: 256,
 	description: 2048,
@@ -116,33 +117,33 @@ export default class MessageEmbed {
 	}
 }
 
-export interface EmbedAuthor {
+export type EmbedAuthor = {
 	name: string;
 	icon_url?: string;
 	url?: string;
 }
 
-export interface EmbedField {
+export type EmbedField = {
 	name: string;
 	value: string;
 	inline: boolean;
 }
 
-export interface EmbedFile {
+export type EmbedFile = {
 	name: string;
 	file: Buffer;
 }
 
-export interface EmbedFooter {
+export type EmbedFooter = {
 	text: string;
 	icon_url?: string;
 }
 
-export interface EmbedImage {
+export type EmbedImage = {
 	url: string;
 }
 
-export interface EmbedCode {
+export type EmbedCode = {
 	author?: EmbedAuthor;
 	color: number;
 	description?: string;

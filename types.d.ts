@@ -1,12 +1,12 @@
-import { Guild, TextChannel, Member, Message } from 'eris';
+import { Guild, Member, Message, TextChannel } from 'eris';
 
 export declare namespace Command {
 	export type Context = {
 		args: string[];
-		guild: Guild,
-		channel: TextChannel,
-		member: Member,
-		message: Message
+		guild: Guild;
+		channel: TextChannel;
+		member: Member;
+		message: Message;
 	}
 
 	export type Options = {

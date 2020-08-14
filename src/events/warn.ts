@@ -6,7 +6,7 @@ export default class WarnEvent extends Event {
 		super('warn');
 	}
 
-	async execute(client: Server, message: string, id: number) {
+	execute(client: Server, message: string, id: number) {
 		client.console.warn(`[Gateway] [${id}] ${message}`);
 	}
 }
