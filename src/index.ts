@@ -11,19 +11,19 @@ const Client = new Server(TOKEN, {
 	messageLimit: 300,
 });
 
-Client.loadDirectory(join(Client.constants.FILE_DIRS.ROOT(), 'commands'))
+Client.loadDirectory(join(Client.constants.FILEDIRS.ROOT(), 'commands'))
 	.reloadEvents()
 	.connect();
 
-process.on('unhandledRejection', async (reason: Error | unknown) => {
+process.on('unhandledRejection', (reason: Error | unknown) => {
 	if (reason instanceof Error) {
 		if (Client.bot) {
 			const { code } = new MessageEmbed()
 				.setColor(Client.constants.COLORS.ORANGE)
 				.setTitle('Unhandled Promise Rejection')
-				.setDescription(Client.constants.DISCORD.CODE_BLOCK(inspect(reason).slice(0, 2000), 'js'))
+				.setDescription(Client.constants.DISCORD.CODEBLOCK(inspect(reason).slice(0, 2000), 'js'))
 				.setTimestamp();
-			await Client.createMessage(Client.constants.CHANNELS.ERRORS, { embed: code }).catch(() => undefined);
+			Client.createMessage(Client.constants.CHANNELS.ERRORS, { embed: code }).catch(() => undefined);
 		}
 
 		Client.console.error(`[Unhandled Promise Rejection] ${reason}`);
